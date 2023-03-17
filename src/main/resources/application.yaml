@@ -1,0 +1,12 @@
+app:
+  name: metrics-demo
+spring:
+  application:
+    name: ${app.name}
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info, metric

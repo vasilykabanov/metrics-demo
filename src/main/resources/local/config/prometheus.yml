@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: 'metrics-demo'
+    scrape_interval: 5s
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'host.docker.internal:8081' ]
+      # Если host.docker.internal не подходит,
+      # host ip можно узнать командой ipconfig getifaddr en0
+      # - targets: [ '192.168.0.107:8081' ]
